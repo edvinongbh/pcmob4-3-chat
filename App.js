@@ -12,8 +12,8 @@ export default function App() {
       <Stack.Navigator
         screenOptions={{ headerLeft: () => null, gestureEnabled: false }}
       >
-        <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Chat" component={ChatScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,12 +1,10 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
 import { TextInput } from "react-native-gesture-handler";
-import { useNavigation } from "@react-navigation/native";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function LoginScreen() {
-  const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorText, setErrorText] = useState("");
@@ -14,7 +12,6 @@ export default function LoginScreen() {
   async function login() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigation.navigate("Chat");
     } catch (error) {
       console.log(error);
       setErrorText(error.message);
